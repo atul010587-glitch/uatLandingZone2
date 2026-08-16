@@ -17,6 +17,7 @@ jobs:
     defaults:
       run:
         shell: bash
+        working-directory: ./environment
 
     steps:    
     - name: Checkout
@@ -32,7 +33,7 @@ jobs:
     
     - name: Terraform Format
       run: terraform fmt -check
-      working-directory: ./environment
+      
       
     - name: Terraform Validate
       run: terraform validate
